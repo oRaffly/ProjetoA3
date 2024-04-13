@@ -1,0 +1,477 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.buttons {
+  background-color: #FFEC87;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #D9D9D9;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img {
+  flex: 1;
+  position: relative;
+  /* Permite posicionar o texto em relação à imagem */
+  overflow: hidden;
+  /* Adicionado para esconder o conteúdo que ultrapassa os limites da div */
+}
+
+.img-image {
+  background-image: url('./images/QuickStopShop.webp');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 559px;
+  background-position: center; /* Centraliza a imagem */
+  background-size: cover; /* Isso faz com que a imagem cubra todo o corpo da página */
+}
+
+.img-text {
+  position: absolute;
+  /* Posiciona o texto de forma absoluta dentro da seção .img */
+  top: 50%;
+  /* Centraliza verticalmente */
+  left: 50%;
+  /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%);
+  /* Move o texto para o centro */
+  color: #FFEC87;
+  /* Cor do texto */
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
+  /* Tamanho da fonte */
+  text-align: center;
+  /* Centraliza o texto */
+  width: 90%;
+  /* Aumenta o width do texto */
+  -webkit-text-stroke-width: 1px;
+  /* Adiciona um contorno ao texto */
+  -webkit-text-stroke-color: #C0B36B;
+  /* Cor do contorno */
+}
+
+.exit {
+  width: 40px;
+  height: 6px;
+  background-color: white;
+  margin-left: 20px;
+  position: relative;
+  border-radius: 2px;
+  /* Adiciona bordas arredondadas para parecer um sinal de adição */
+  transform: rotate(45deg);
+  /* Inclina o sinal de adição para parecer um "X" */
+}
+
+.exit::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 6px;
+  height: 40px;
+  border-radius: 2px;
+  /* Adiciona bordas arredondadas para parecer um sinal de adição */
+  top: -18px;
+  /* Ajusta a posição vertical do traço vertical */
+  left: 18px;
+  /* Ajusta a posição horizontal do traço vertical */
+}
+
+.minus {
+  width: 40px;
+  height: 6px;
+  background-color: white;
+  position: relative;
+  border-radius: 2px;
+  /* Adiciona bordas arredondadas para parecer um sinal de adição */
+  margin-left: auto;
+  /* Empurra o elemento para a direita */
+}
+
+/* Login */
+
+.loginButton {
+  background-color: #FFEC87;
+  border-color: #FFEC87;
+  color: white;
+  font-size: 24px; /* Ajuste o tamanho da fonte conforme necessário */
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-right-width: 4px;
+  border-left-width: 4px;
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+.login-div {
+  background-color: #FFEC87;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 520px;
+  bottom: 0;
+  height: 520px;
+  width: 300px;
+  display: none;
+}
+
+.login-div input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.login-div label {
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2C2C2C;
+}
+
+.entrarButton {
+  padding: 5px 10px;
+  background-color: #87FFBB;
+  border-color: #87FFBB;
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  border-right-width: 4px;
+  border-left-width: 4px;
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+}
+
+.entrarButton a {
+  text-decoration: none;
+  color: #2C2C2C;
+}
+
+/* Teste */
+
+.logoutButton {
+  background-color: #FFEC87;
+  border-color: #FFEC87;
+  color: white;
+  font-size: 24px; /* Ajuste o tamanho da fonte conforme necessário */
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-right-width: 4px;
+  border-left-width: 4px;
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+.button {
+  color: #2C2C2C;
+  font-size: 24px;
+  /* Ajuste o tamanho da fonte conforme necessário */
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 6px;
+  width: 216px;
+}
+
+.button a {
+  text-decoration: none;
+  color: #2C2C2C;
+}
+
+/* body {
+  background-color: #878787;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.voltar {
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 15px;
+  margin-left: 175px;
+  background-color: #A6AEA6;
+  border-radius: 5px;
+  width: 100px;
+}
+
+footer {
+  padding: 20px 0;
+} */
+
+/*Login Section*/
+
+/* .login {
+  padding: 100px;
+}
+
+#ou {
+  font-weight: bold;
+  color: white;
+  margin-top: 8px;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.loginCard {
+  width: 500px;
+  height: 500px;
+  background: rgba(214, 218, 214, 0.50);
+}
+
+.login-info {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.login-button {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.codigoCard {
+  width: 500px;
+  height: 517px;
+  background: rgba(214, 218, 214, 0.50);
+} */
+
+/*Usuario Section*/
+
+/* .novidadeTitulo {
+  text-align: center;
+  background-color: #D6DAD6;
+  margin: auto;
+  width: 80%;
+  margin-top: 12px;
+}
+
+.novidadeTitulo h4 {
+  height: 31px;
+} */
+
+/*Cadastro Section*/
+
+/* #cadastro {
+  padding: 100px;
+}
+
+#voltar {
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 15px;
+  margin-left: 175px;
+  background-color: #A6AEA6;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.cadastro-title {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: black;
+}
+
+.cadastroCard {
+  width: 500px;
+  height: 725px;
+  background: #D6DAD6;
+}
+
+.cadastro-info {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.cadastro-button {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.cadastroPlataformaCard {
+  width: 500px;
+  height: 405px;
+  background: #D6DAD6;
+}
+
+.cadastroJogoCard {
+  width: 500px;
+  height: 575px;
+  background: #D6DAD6;
+} */
+
+/*Media Query Section*/
+
+/* @media (max-width: 450px) {
+
+  #botaoCadastrarJogo button {
+      width: 150px;
+      font-size: 18px;
+      text-align: center;
+  }
+
+  #botaoRemover button {
+      width: 150px;
+      font-size: 18px;
+      text-align: center;
+      margin-left: -40px;
+  }
+
+  #botaoCadastrar button {
+      width: 150px;
+      font-size: 18px;
+      text-align: center;
+      margin-left: -40px;
+  }
+
+  .cadastroJogoCard {
+      width: 300px;
+      height: 475px;
+      background: #D6DAD6;
+  }
+
+  .cadastroPlataformaCard {
+      width: 300px;
+      height: 475px;
+      background: #D6DAD6;
+  }
+
+  .card-body {
+      width: 100%;
+  }
+
+  .cadastro-form {
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  .form-group {
+      margin-bottom: 15px;
+  }
+
+  .cadastro-button {
+      text-align: center;
+  }
+
+  .cadastro-title {
+      text-align: center;
+      font-size: 2rem;
+      line-height: 1.5;
+      color: black;
+      font-size: 18px;
+  }
+
+  #voltar {
+      text-align: center;
+      margin-bottom: 15px;
+      margin-left: 0;
+      background-color: #A6AEA6;
+      border-radius: 5px;
+      width: 70%;
+      max-width: 334px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+  #nome,
+  #fabricante,
+  #plataforma,
+  #status {
+      font-size: 14px
+  }
+} */
+
+/*App Section*/
+
+/* .App {
+  text-align: center;
+} */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
