@@ -1,0 +1,23 @@
+.navbar {
+    text-align: center;
+}
+
+.navbar-brand {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+}
+
+.navBar {
+    background: #1A456C;
+}

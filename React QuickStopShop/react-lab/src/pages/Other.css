@@ -1,0 +1,393 @@
+.otherNavbar {
+    background-color: #D9D9D9;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+}
+
+.left-section,
+.right-section {
+    display: flex;
+    flex-direction: column;
+}
+
+#titulo {
+    background-color: #FFEC87;
+    width: 1100px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+#titulo h2 {
+    color: white;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px
+}
+
+.voltar {
+    background-color: #FFEC87;
+    padding: 10px;
+    width: 990px;
+    text-align: right;
+    /* Alinha o conteúdo do div "voltar" à direita */
+}
+
+.voltarButton {
+    background-color: #FF8787;
+    border-color: #FF8787;
+    font-size: 24px;
+    /* Ajuste o tamanho da fonte conforme necessário */
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.voltarButton a {
+    text-decoration: none;
+    color: #2C2C2C;
+}
+
+.usuario_n {
+    background-color: #FFEC87;
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+    height: 168px;
+}
+
+.options1 {
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+    height: 540px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.options1 button {
+    background-color: #D9D9D9;
+    border-color: #D9D9D9;
+    margin-bottom: 5px;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+    font-size: large;
+}
+
+.options1 input {
+    padding: 5px;
+}
+
+.options2 {
+    background-color: #FFFFFF;
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+    height: 260px;
+    text-align: center;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+}
+
+#reload {
+    color: white;
+    margin-left: 15px;
+}
+
+#back {
+    color: white;
+    font-size: 2.5em;
+}
+
+/* Usuario */
+
+.user {
+    flex: 1;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.userInfo {
+    background-color: #FFFFFF;
+    padding: 10px;
+    height: 400px;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+}
+
+/* Usuarios */
+
+.usuarios {
+    position: absolute;
+    /* Permite sobrepor a div "user" na imagem */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.usuarios .right-section {
+    margin-bottom: 30px;
+}
+
+.usuariosInfo {
+    background-color: #FFFFFF;
+    padding: 10px;
+    height: 550px;
+    width: 990px;
+}
+
+/* Vendas */
+
+.vendas {
+    position: absolute;
+    /* Permite sobrepor a div "user" na imagem */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.vendas .right-section {
+    margin-bottom: 30px;
+}
+
+.vendasInfo {
+    background-color: #FFFFFF;
+    padding: 10px;
+    height: 550px;
+    width: 990px;
+}
+
+/* Estoque */
+
+.estoque {
+    position: absolute;
+    /* Permite sobrepor a div "user" na imagem */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.estoque .right-section {
+    margin-bottom: 30px;
+}
+
+.estoqueInfo {
+    background-color: #FFFFFF;
+    padding: 10px;
+    height: 550px;
+    width: 990px;
+}
+
+/* Detalhe Venda */
+
+.detalheVenda {
+    flex: 1;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.vendaTable {
+    background-color: #FFFFFF;
+    padding: 10px;
+    height: 400px;
+    column-count: 7;
+    /* Divide os itens em sete colunas */
+}
+
+.vendaTable p {
+    margin-top: 0px;
+    border-bottom: 1px solid #DDD;
+    /* Adiciona uma linha divisora entre os itens */
+    padding-bottom: 5px;
+    /* Adiciona um espaçamento entre os itens e a linha divisora */
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+}
+
+.verButton {
+    background-color: #87FFBB;
+    border-color: #87FFBB;
+    font-size: 24px;
+    /* Ajuste o tamanho da fonte conforme necessário */
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.verButton a {
+    text-decoration: none;
+    color: #2C2C2C;
+}
+
+.total {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+}
+
+/* Detalhe Pedido */
+
+.detalhePedido {
+    flex: 1;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.pedidoInfo {
+    background-color: #FFFFFF;
+    padding: 10px;
+    height: 400px;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+}
+
+/* Telas de Cadastro */
+
+#novoTitulo {
+    background-color: #FFEC87;
+    width: 1000px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+#novoTitulo h2 {
+    color: white;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px
+}
+
+.novo-div {
+    background-color: #FFEC87;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 480px;
+    bottom: 0;
+    height: 491px;
+    width: 400px;
+}
+
+.novo-div input {
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 382px;
+}
+
+.novo-div select {
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 397px;
+}
+
+.novo-div label {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+}
+
+.criarButton {
+    padding: 5px 10px;
+    background-color: #87FFBB;
+    border-color: #87FFBB;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+}
+
+.criarButton a {
+    text-decoration: none;
+    color: #2C2C2C;
+}
+
+.cancelButton {
+    background-color: #FFEC87;
+    border-color: #FFEC87;
+    color: white;
+    font-size: 24px;
+    /* Ajuste o tamanho da fonte conforme necessário */
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}

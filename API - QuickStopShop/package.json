@@ -1,0 +1,23 @@
+{
+  "name": "vendas-api",
+  "version": "1.0.0",
+  "description": "vendas-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Eu",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "-": "^0.0.1",
+    "nodemon": "^3.0.1"
+  }
+}
