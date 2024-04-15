@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import './Other.css';
+import api from '../api';
 
 const Usuarios = () => {
     const navigate = useNavigate();
+    const [usuarios, setUsuarios] = useState([]);
+
+    useEffect(() => {
+        // Aqui você pode fazer a requisição para obter os usuários da sua API
+        // Exemplo de como fazer a requisição utilizando a API mockada
+        api.get('/obterUsuarios')
+            .then(response => {
+                setUsuarios(response.data.usuarios);
+                console.log(response.data.usuarios);
+            })
+            .catch(error => {
+                console.error('Erro ao obter usuários:', error);
+            });
+    }, []);
+
+    const handleUsuarioClick = (idUsuario) => {
+        navigate(`/usuario/${idUsuario}`);
+    };
 
     const handleVoltarClick = () => {
         navigate('/homepage');
@@ -38,7 +57,30 @@ const Usuarios = () => {
                         </div>
                         <div className="right-section">
                             <div className="usuariosInfo">
-
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>IdUsuário</th>
+                                            <th>DataInscrição</th>
+                                            <th>Gênero</th>
+                                            <th>NumeroCompras</th>
+                                            <th>Idade</th>
+                                            <th>Local(CEP)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {usuarios.map(usuario => (
+                                            <tr key={usuario.idUsuario} onClick={() => handleUsuarioClick(usuario.idUsuario)}>
+                                                <td>{usuario.idUsuario}</td>
+                                                <td>{usuario.dataInscricao}</td>
+                                                <td>{usuario.genero}</td>
+                                                <td>{usuario.nCompras}</td>
+                                                <td>{usuario.idade}</td>
+                                                <td>{usuario.cep}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
