@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import './Other.css';
+import api from '../api';
 
 const Estoque = () => {
     const navigate = useNavigate();
+    const [produtos, setProdutos] = useState([]);
+
+    useEffect(() => {
+        api.get('/obterProdutos')
+            .then(response => {
+                setProdutos(response.data.produtos);
+                console.log(response.data.produtos);
+            })
+            .catch(error => {
+                console.error('Erro ao obter produtos:', error);
+            });
+    }, []);
 
     const handleVoltarClick = () => {
         navigate('/homepage');
@@ -37,7 +50,26 @@ const Estoque = () => {
                         </div>
                         <div className="right-section">
                             <div className="estoqueInfo">
-                                
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>IdProduto</th>
+                                            <th>DataCriação</th>
+                                            <th>Categoria</th>
+                                            <th>Quantidade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {produtos.map(produto => (
+                                            <tr>
+                                                <td>{produto.idProduto}</td>
+                                                <td>{produto.dataCriacao}</td>
+                                                <td>{produto.categoria}</td>
+                                                <td>{produto.quantidade}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
