@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"OK: no test specified\" && exit 0",
-    "prepare": "husky",
-    "ci": "npm test && npx commitlint --last --verbose"
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
