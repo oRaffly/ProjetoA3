@@ -14,7 +14,7 @@ module.exports = app => {
 
     // Rota para obter um usuário por ID
     app.get('/obterUsuarioPorId/:idUsuario', (req, res) => {
-        const id = req.params.idUsuario; // Obtém o idUsuario  da URL
+        const id = req.params.idUsuario; // Obtém o idUsuario da URL
         UsuariosDAO.obterUsuarioPorId(id, (err, usuario) => {
             if (err) {
                 console.error('Erro ao buscar usuário por ID:', err);

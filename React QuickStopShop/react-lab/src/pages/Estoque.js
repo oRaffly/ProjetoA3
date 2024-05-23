@@ -41,10 +41,10 @@ const Estoque = () => {
                         <div className="left-section">
                             <div className="options1">
                                 <button>IdProduto</button>
+                                <button>NomeProduto</button>
                                 <button>DataCriação</button>
                                 <button>Categoria</button>
                                 <button>Quantidade</button>
-                                <button>Vendas</button>
                                 <input type="text" placeholder="Pesquisar..." />
                             </div>
                         </div>
@@ -54,6 +54,7 @@ const Estoque = () => {
                                     <thead>
                                         <tr>
                                             <th>IdProduto</th>
+                                            <th>NomeProduto</th>
                                             <th>DataCriação</th>
                                             <th>Categoria</th>
                                             <th>Quantidade</th>
@@ -63,6 +64,7 @@ const Estoque = () => {
                                         {produtos.map(produto => (
                                             <tr>
                                                 <td>{produto.idProduto}</td>
+                                                <td>{produto.nomeProduto}</td>
                                                 <td>{produto.dataCriacao}</td>
                                                 <td>{produto.categoria}</td>
                                                 <td>{produto.quantidade}</td>

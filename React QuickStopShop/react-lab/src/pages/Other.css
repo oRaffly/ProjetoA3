@@ -293,8 +293,25 @@
     background-color: #FFFFFF;
     padding: 10px;
     height: 400px;
-    column-count: 7;
+    /* column-count: 7; */
     /* Divide os itens em sete colunas */
+}
+
+.vendaTable table {
+    margin-top: 15px;
+    width: 990px;
+}
+
+.vendaTable th {
+    border-bottom: 1px solid #3f5a54;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+}
+
+.vendaTable tr {
+    text-align: center;
 }
 
 .vendaTable p {

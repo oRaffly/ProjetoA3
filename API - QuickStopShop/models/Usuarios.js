@@ -1,6 +1,5 @@
 module.exports = class Usuarios {
-    constructor(idUsuario, titulo, dataInscricao, nomeUsuario, genero, idade, email, telefone, cep, enderecos, nCompras, nCancelamentos) {
-        this.idUsuario = idUsuario;
+    constructor(titulo, dataInscricao, nomeUsuario, genero, idade, email, telefone, cep, enderecos, nCompras, nCancelamentos) {
         this.titulo = titulo;
         this.dataInscricao = dataInscricao;
         this.nomeUsuario = nomeUsuario;

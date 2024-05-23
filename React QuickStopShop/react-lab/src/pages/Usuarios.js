@@ -9,8 +9,6 @@ const Usuarios = () => {
     const [usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
-        // Aqui você pode fazer a requisição para obter os usuários da sua API
-        // Exemplo de como fazer a requisição utilizando a API mockada
         api.get('/obterUsuarios')
             .then(response => {
                 setUsuarios(response.data.usuarios);

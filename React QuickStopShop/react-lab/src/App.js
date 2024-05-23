@@ -12,6 +12,7 @@ import Vendas from './pages/Vendas';
 import NovoProduto from './pages/NovoProduto';
 import NovaCategoria from './pages/NovaCategoria';
 import NovoFuncionario from './pages/NovoFuncionario';
+import DetalheVenda from './pages/DetalheVenda';
 
 // Components
 // import Navbar from './components/Navbar';
@@ -31,6 +32,7 @@ function App() {
             <Route path="/novoProduto" element={<NovoProduto />} />
             <Route path="/novaCategoria" element={<NovaCategoria />} />
             <Route path="/novoFuncionario" element={<NovoFuncionario />} />
+            <Route path="/detalheVenda/:idUsuario" element={<DetalheVenda />} />
           </Routes>
         </BrowserRouter>
       </div>
