@@ -152,15 +152,15 @@ class Tabelas {
         ComprasDAO.obterCompras((err, compras) => {
             if (compras.length == 0) {
                 const novasCompras = [
-                    new Compras(1, 'Produto 1', 1, 'R$1,00', 'Completo', '10/02/2021', 1),
-                    new Compras(2, 'Produto 2', 1, 'R$49,00', 'Em Trânsito', '10/02/2021', 1),
-                    new Compras(3, 'Produto 3', 1, 'R$50,00', 'Em Trânsito', '10/02/2021', 1),
-                    new Compras(2, 'Produto 2', 1, 'R$49,00', 'Em Trânsito', '08/05/2020', 2),
-                    new Compras(1, 'Produto 1', 1, 'R$1,00', 'Completo', '08/05/2020', 2),
-                    new Compras(3, 'Produto 3', 1, 'R$50,00', 'Em Trânsito', '08/05/2020', 2),
-                    new Compras(3, 'Produto 3', 1, 'R$50,00', 'Em Trânsito', '23/11/2019', 3),
-                    new Compras(2, 'Produto 2', 1, 'R$49,00', 'Em Trânsito', '23/11/2019', 3),
-                    new Compras(1, 'Produto 1', 1, 'R$1,00', 'Completo', '23/11/2019', 3)
+                    new Compras(1, 'Produto 1', 1, 'R$1,00', 'Entregue', '10/02/2021', 1),
+                    new Compras(2, 'Produto 2', 1, 'R$49,00', 'Em Transporte', '10/02/2021', 1),
+                    new Compras(3, 'Produto 3', 1, 'R$50,00', 'Em Transporte', '10/02/2021', 1),
+                    new Compras(2, 'Produto 2', 1, 'R$49,00', 'Em Transporte', '08/05/2020', 2),
+                    new Compras(1, 'Produto 1', 1, 'R$1,00', 'Entregue', '08/05/2020', 2),
+                    new Compras(3, 'Produto 3', 1, 'R$50,00', 'Em Transporte', '08/05/2020', 2),
+                    new Compras(3, 'Produto 3', 1, 'R$50,00', 'Em Transporte', '23/11/2019', 3),
+                    new Compras(2, 'Produto 2', 1, 'R$49,00', 'Em Transporte', '23/11/2019', 3),
+                    new Compras(1, 'Produto 1', 1, 'R$1,00', 'Entregue', '23/11/2019', 3)
                 ];
 
                 novasCompras.forEach(novaCompra => {

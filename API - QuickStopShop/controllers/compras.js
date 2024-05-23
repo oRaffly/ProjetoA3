@@ -36,4 +36,18 @@ module.exports = app => {
             }
         });
     });
+    
+    app.put('/atualizarStatus/:compraId', (req, res) => {
+        const compraId = req.params.compraId;
+        const { novoStatus } = req.body;
+
+        ComprasDAO.atualizarStatus(compraId, novoStatus, (err, compra) => {
+            if (err) {
+                console.error('Erro ao atualizar status:', err);
+                res.status(500).json({ error: 'Erro ao atualizar status' });
+            } else {
+                res.status(200).json({ message: 'Status atualizado com sucesso', compra });
+            }
+        });
+    });
 };

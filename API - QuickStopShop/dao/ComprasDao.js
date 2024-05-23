@@ -39,6 +39,18 @@ class ComprasDAO {
             }
         });
     }
+    atualizarStatus(compraId, novoStatus, callback) {
+        const sql = 'UPDATE compras SET status = ? WHERE id = ?';
+        db.run(sql, [novoStatus, compraId], function (err) {
+            if (err) {
+                console.error('Erro ao atualizar status:', err.message);
+                callback(err, null);
+            } else {
+                console.log(`Status da compra atualizado com ID: ${compraId}`);
+                callback(null, { id: compraId, status: novoStatus });
+            }
+        });
+    }
 }
 
 module.exports = new ComprasDAO();

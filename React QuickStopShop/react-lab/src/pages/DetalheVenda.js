@@ -9,6 +9,8 @@ const DetalheVenda = () => {
     const { idUsuario } = useParams(); // Obtendo o idUsuario da rota
     const [usuario, setUsuario] = useState(null); // Estado para armazenar os detalhes do usuário
     const [compras, setCompras] = useState([]); // Estado para armazenar os detalhes das compras, inicializado como array vazio
+    const [editandoStatus, setEditandoStatus] = useState(null); // Estado para controlar se o status está sendo editado
+    const [statusSelecionado, setStatusSelecionado] = useState(""); // Estado para armazenar o status selecionado
 
     useEffect(() => {
         // Fazendo a requisição para obter os detalhes do usuário com base no idUsuario
@@ -33,6 +35,42 @@ const DetalheVenda = () => {
         navigate(`/usuario/${idUsuario}`);
     };
 
+    const handleCompraClick = (compraId) => {
+        setEditandoStatus(compraId);
+    };
+
+    const handleAtualizarStatusClick = () => {
+        if (!editandoStatus) {
+            alert("Por favor, escolha um item.");
+            return;
+        }
+
+        if (statusSelecionado) {
+            api.put(`/atualizarStatus/${editandoStatus}`, { novoStatus: statusSelecionado })
+                .then(response => {
+                    const { id, status } = response.data.compra;
+                    const novasCompras = compras.map(compra => {
+                        if (compra.id === id) {
+                            return { ...compra, status };
+                        }
+                        return compra;
+                    });
+                    setCompras(novasCompras);
+                    setEditandoStatus(null);
+                    setStatusSelecionado("");
+                    window.location.reload();
+                })
+                .catch(error => {
+                    console.error('Erro ao atualizar status:', error);
+                });
+        }
+    };
+
+    const handleCancelarClick = () => {
+        setEditandoStatus(null);
+        setStatusSelecionado("");
+    };
+
     // Verificando se os detalhes do usuário foram carregados
     if (!usuario) {
         return null;
@@ -52,12 +90,13 @@ const DetalheVenda = () => {
                 </div>
                 <div className="detalheVenda">
                     <div className="left-section">
-                        <div className="usuario_n">{usuario.nomeUsuario}</div>
+                        <div className="usuario_n">{usuario ? usuario.nomeUsuario : ''}</div>
                         <div className="options2">
-                            <button>Atualizar Status</button>
+                            <button onClick={handleAtualizarStatusClick}>Atualizar Status</button>
                             <button>Manter Desconto</button>
-                            <button>Cancelar Venda</button>
-                            <button>Concluir Venda</button>
+                            {editandoStatus && (
+                                <button onClick={handleCancelarClick}>Cancelar</button>
+                            )}
                         </div>
                     </div>
                     <div className="right-section">
@@ -74,22 +113,31 @@ const DetalheVenda = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {compras.length > 0 ? (
-                                        compras.map(compra => (
-                                            <tr key={compra.id}>
-                                                <td>{compra.idProduto}</td>
-                                                <td>{compra.nomeProduto}</td>
-                                                <td>{compra.quantidade}</td>
-                                                <td>{compra.preco}</td>
-                                                <td>{compra.status}</td>
-                                                <td>{compra.dataCompra}</td>
-                                            </tr>
-                                        ))
-                                    ) : (
-                                        <tr>
-                                            <td colSpan="6">Nenhuma compra encontrada</td>
+                                    {compras.map(compra => (
+                                        <tr key={compra.id}>
+                                            <td>{compra.idProduto}</td>
+                                            <td>{compra.nomeProduto}</td>
+                                            <td>{compra.quantidade}</td>
+                                            <td>{compra.preco}</td>
+                                            <td>
+                                                {editandoStatus === compra.id ? (
+                                                    <select
+                                                        value={statusSelecionado}
+                                                        onChange={e => setStatusSelecionado(e.target.value)}
+                                                    >
+                                                        <option value="">Selecione o status</option>
+                                                        <option value="Pagamento Efetuado">Pagamento Efetuado</option>
+                                                        <option value="Em Transporte">Em Transporte</option>
+                                                        <option value="Cancelado">Cancelado</option>
+                                                        <option value="Entregue">Entregue</option>
+                                                    </select>
+                                                ) : (
+                                                    <span onClick={() => handleCompraClick(compra.id)}>{compra.status}</span>
+                                                )}
+                                            </td>
+                                            <td>{compra.dataCompra}</td>
                                         </tr>
-                                    )}
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
