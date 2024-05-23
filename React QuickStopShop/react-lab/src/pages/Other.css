@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid gray;
 }
 
 .left-section,
@@ -32,12 +32,21 @@
     padding-top: 10px
 }
 
-.voltar {
+.voltar1 {
     background-color: #FFEC87;
     padding: 10px;
     width: 990px;
     text-align: right;
     /* Alinha o conteúdo do div "voltar" à direita */
+}
+
+.voltar2 {
+    background-color: #FFEC87;
+    padding: 10px;
+    width: 990px;
+    display: flex;
+    justify-content: space-between; /* Alinha os itens no div "voltar" */
+    align-items: center; /* Alinha os itens verticalmente no div "voltar" */
 }
 
 .voltarButton {
@@ -103,10 +112,22 @@
     width: 250px;
     height: 260px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.options2 button {
+    background-color: #D9D9D9;
+    border-color: #D9D9D9;
+    margin-bottom: 5px;
     font-family: "Krona One", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #2C2C2C;
+    font-size: large;
 }
 
 #reload {
@@ -166,6 +187,19 @@
     width: 990px;
 }
 
+.usuariosInfo table {
+    margin-top: 15px;
+    width: 990px;
+}
+
+.usuariosInfo th {
+    border-bottom: 1px solid #3f5a54;
+}
+
+.usuariosInfo tr {
+    text-align: center;
+}
+
 /* Vendas */
 
 .vendas {
@@ -190,6 +224,19 @@
     padding: 10px;
     height: 550px;
     width: 990px;
+}
+
+.vendasInfo table {
+    margin-top: 15px;
+    width: 990px;
+}
+
+.vendasInfo th {
+    border-bottom: 1px solid #3f5a54;
+}
+
+.vendasInfo tr {
+    text-align: center;
 }
 
 /* Estoque */
@@ -218,6 +265,19 @@
     width: 990px;
 }
 
+.estoqueInfo table {
+    margin-top: 15px;
+    width: 990px;
+}
+
+.estoqueInfo th {
+    border-bottom: 1px solid #3f5a54;
+}
+
+.estoqueInfo tr {
+    text-align: center;
+}
+
 /* Detalhe Venda */
 
 .detalheVenda {
@@ -233,8 +293,25 @@
     background-color: #FFFFFF;
     padding: 10px;
     height: 400px;
-    column-count: 7;
+    /* column-count: 7; */
     /* Divide os itens em sete colunas */
+}
+
+.vendaTable table {
+    margin-top: 15px;
+    width: 990px;
+}
+
+.vendaTable th {
+    border-bottom: 1px solid #3f5a54;
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2C2C2C;
+}
+
+.vendaTable tr {
+    text-align: center;
 }
 
 .vendaTable p {
