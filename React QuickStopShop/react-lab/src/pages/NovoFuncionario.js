@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import './Other.css';
@@ -12,8 +12,19 @@ const NovoFuncionario = () => {
     const [cadastroEmail, setCadastroEmail] = useState("");
     const [cadastroSenha, setCadastroSenha] = useState("");
     const [confirmaSenha, setConfirmaSenha] = useState("");
+    const [error, setError] = useState("");
 
     const handleCadastroClick = () => {
+        if (!nome || !sobrenome || !cadastroEmail || !cadastroSenha || !confirmaSenha) {
+            setError("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        if (cadastroSenha !== confirmaSenha) {
+            setError("As senhas não coincidem.");
+            return;
+        }
+
         const novoFuncionario = {
             // login,
             nome,
@@ -36,7 +47,7 @@ const NovoFuncionario = () => {
             })
             .catch(error => {
                 console.error('Erro ao cadastrar funcionário:', error);
-                // Trate o erro adequadamente, exiba uma mensagem de erro, etc.
+                setError("Erro ao cadastrar funcionário. Tente novamente.");
             });
     };
 
@@ -60,6 +71,7 @@ const NovoFuncionario = () => {
                     <div className="img-image"></div>
                 </div>
                 <div className="novo-div">
+                    {error && <p className="error">{error}</p>}
                     {/* <label htmlFor="login">Login</label>
                     <input type="text" name="login" id="login" placeholder="Login..." onChange={(e) => setLogin(e.target.value)} /> */}
                     <label htmlFor="nome">Nome</label>
